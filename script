@@ -1,0 +1,13 @@
+#!/bin/bash
+# Update package index
+sudo apt update -y
+
+# Install Nginx
+sudo apt install -y nginx
+
+# Enable and start Nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+# Optional: Replace default Nginx index page with a custom message
+echo "<h1>Welcome to my EC2 Nginx server!</h1>" | sudo tee /var/www/html/index.html
